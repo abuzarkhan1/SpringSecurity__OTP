@@ -21,11 +21,14 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(unique = true)
+    private String userId;
     private String name;
     @Column(unique = true)
     private String email;
     private String password;
     private String verifyOtp;
+    private String resetOtp;
     private Boolean isAccountVerified;
     private Long verifyOtpExpiryAt;
     private Long resetOtpExpiryAt;
